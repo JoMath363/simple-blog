@@ -1,8 +1,124 @@
 :root {
   --primary: #E73C37;
   --secondary: #1e4394;
+  --accent: #f7f2ed;
   --bg-1: #f7efe7;
   --bg-2: #bfb0a0;
   --text: #312c38;
   --subtext: #6c6d77;
+}
+
+* {
+  margin: 0;
+}
+
+body {
+  background: var(--bg-1);
+
+  font-family: 'calibri', 'sans-serif';
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 5rem;
+  padding: 0 10%;
+
+  background: var(--primary);
+}
+
+#logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+
+  color: var(--bg-1);
+
+  & img {
+    height: 2.2rem;
+    width: 2.2rem;
+  }
+
+  & h2 {
+    font-size: 2rem;
+  }
+}
+
+#login_btn {
+  padding: 0.5rem 1rem;
+
+  border: 2px solid var(--accent);
+  border-radius: 5px;
+
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1.4rem;
+
+  &:hover {
+    background-color: var(--text);
+  }
+}
+
+main {
+  padding: 2rem 10%;
+}
+
+#posts_grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+
+  min-height: 150px;
+  padding: 2rem;
+
+  border: 2px solid var(--subtext);
+  border-radius: 5px;
+
+  color: var(--text);
+  text-decoration: none;
+
+  & h2  {
+    font-size: 2rem;
+  }
+
+  & p {
+    font-size: 1.2rem;
+  }
+
+  & .status {
+    display: flex;
+    gap: 1rem;
+
+    & .rate-btn {
+      all: unset;
+
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+
+      & img {
+        height: 1.3rem;
+        width: 1.3rem;
+      }
+
+      & span {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
+  &:hover {
+    border-color: var(--primary);
+    cursor: pointer;
+  }
 }
