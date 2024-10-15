@@ -1,5 +1,9 @@
+// Assets
 import likeIcon from '../assets/like-icon.png'
 import dislikeIcon from '../assets/dislike-icon.png'
+
+// Styles
+import '../styles/post.css'
 
 function Post(params) {
     return(

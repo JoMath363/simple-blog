@@ -6,6 +6,9 @@
   --bg-2: #bfb0a0;
   --text: #312c38;
   --subtext: #6c6d77;
+
+  --icon-1: invert(47%) sepia(2%) saturate(1599%) hue-rotate(197deg) brightness(88%) contrast(86%);;
+  --icon-2: invert(41%) sepia(24%) saturate(7420%) hue-rotate(337deg) brightness(89%) contrast(103%);;
 }
 
 * {
@@ -18,51 +21,49 @@ body {
   font-family: 'calibri', 'sans-serif';
 }
 
-header {
+main {
+  padding: 2rem 10%;
+}
+
+#home_topbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  height: 5rem;
-  padding: 0 10%;
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
 
-  background: var(--primary);
-}
+  border-bottom: 3px solid var(--primary);
 
-#logo {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-
-  color: var(--bg-1);
-
-  & img {
-    height: 2.2rem;
-    width: 2.2rem;
+  & h1 {
+    color: var(--text);
+    font-size: 2.3rem;
   }
 
-  & h2 {
-    font-size: 2rem;
+  & .contact {
+    display: flex;
+    align-items: center;
+    gap: 1.3rem;
+
+    & a {
+      display: grid;
+      place-items: center;
+
+      & img {
+        height: 1.5rem;
+        width: 1.5rem;
+
+        filter: var(--icon-1);
+      }
+    }
+
+    & a:hover {
+      & img {
+        filter: var(--icon-2);
+        cursor: pointer;
+      }
+    }
   }
-}
-
-#login_btn {
-  padding: 0.5rem 1rem;
-
-  border: 2px solid var(--accent);
-  border-radius: 5px;
-
-  color: var(--accent);
-  text-decoration: none;
-  font-size: 1.4rem;
-
-  &:hover {
-    background-color: var(--text);
-  }
-}
-
-main {
-  padding: 2rem 10%;
 }
 
 #posts_grid {
@@ -72,53 +73,48 @@ main {
   gap: 1rem;
 }
 
-.post {
+#posts_nav {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 1rem;
 
-  min-height: 150px;
-  padding: 2rem;
+  padding: 2rem 0 0;
 
-  border: 2px solid var(--subtext);
-  border-radius: 5px;
+  & button {
+    all: unset;
 
-  color: var(--text);
-  text-decoration: none;
-
-  & h2  {
-    font-size: 2rem;
-  }
-
-  & p {
-    font-size: 1.2rem;
-  }
-
-  & .status {
     display: flex;
-    gap: 1rem;
+    align-items: center;
 
-    & .rate-btn {
-      all: unset;
+    padding: 0.5rem 0.8rem;
 
-      display: flex;
-      align-items: center;
-      gap: 0.3rem;
+    border: 2px solid var(--text);
+    border-radius: 5px;
 
-      & img {
-        height: 1.3rem;
-        width: 1.3rem;
-      }
+    & span {
+      padding: 0.2rem 0.5rem;
 
-      & span {
-        font-size: 1.2rem;
-      }
+      color: var(--text);
+      font-size: 1.2rem;
+      font-weight: 600;
+    }
+
+    & img {
+      height: 1rem;
+      width: 1rem;
     }
   }
 
-  &:hover {
+  & button:hover {
     border-color: var(--primary);
     cursor: pointer;
+
+    & span {
+      color: var(--primary);
+    }
+
+    & img {
+      filter: var(--icon-2);
+    }
   }
 }

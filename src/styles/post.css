@@ -1,0 +1,50 @@
+.post {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+
+    min-height: 150px;
+    padding: 2rem;
+
+    border: 2px solid var(--text);
+    border-radius: 5px;
+
+    color: var(--text);
+    text-decoration: none;
+
+    & h2 {
+        font-size: 2rem;
+    }
+
+    & p {
+        font-size: 1.2rem;
+    }
+
+    & .status {
+        display: flex;
+        gap: 1rem;
+
+        & .rate-btn {
+            all: unset;
+
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+
+            & img {
+                height: 1.3rem;
+                width: 1.3rem;
+            }
+
+            & span {
+                font-size: 1.2rem;
+            }
+        }
+    }
+
+    &:hover {
+        border-color: var(--primary);
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,42 @@
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    height: 5rem;
+    padding: 0 10%;
+
+    background: var(--primary);
+}
+
+#logo {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    color: var(--bg-1);
+
+    & img {
+        height: 2.2rem;
+        width: 2.2rem;
+    }
+
+    & h2 {
+        font-size: 2rem;
+    }
+}
+
+#login_btn {
+    padding: 0.5rem 1rem;
+
+    border: 2px solid var(--accent);
+    border-radius: 5px;
+
+    color: var(--accent);
+    text-decoration: none;
+    font-size: 1.4rem;
+
+    &:hover {
+        background-color: var(--text);
+    }
+}

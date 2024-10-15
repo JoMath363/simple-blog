@@ -158,5 +158,37 @@ export const blogPosts = [
     likes: 180,
     dislikes: 3,
     dateTime: "2024-09-26 11:25"
+  },
+  {
+    id: 20,
+    title: "How to Start with JavaScript",
+    content: "JavaScript is a versatile language used for both frontend and backend development...",
+    likes: 120,
+    dislikes: 5,
+    dateTime: "2024-10-15 10:00"
+  },
+  {
+    id: 21,
+    title: "CSS Grid vs Flexbox",
+    content: "Both CSS Grid and Flexbox are powerful layout tools, but they are used in different scenarios...",
+    likes: 85,
+    dislikes: 2,
+    dateTime: "2024-10-14 15:30"
+  },
+  {
+    id: 22,
+    title: "Understanding APIs",
+    content: "APIs allow different applications to communicate with each other. Understanding how to work with them is essential...",
+    likes: 97,
+    dislikes: 7,
+    dateTime: "2024-10-13 09:45"
+  },
+  {
+    id: 23,
+    title: "Best Practices for Responsive Design",
+    content: "Creating a responsive design ensures your website works well on all devices...",
+    likes: 140,
+    dislikes: 3,
+    dateTime: "2024-10-12 18:20"
   }
 ];
