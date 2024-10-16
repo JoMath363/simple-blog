@@ -118,3 +118,11 @@ main {
     }
   }
 }
+
+@media (max-width: 1000px) {
+  #posts_grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    gap: 0.5rem;
+  }
+}

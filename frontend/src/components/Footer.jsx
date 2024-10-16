@@ -12,7 +12,7 @@ function Footer() {
                 <h2>Simple Blog</h2>
             </div>
 
-            <p class="footer-text">
+            <p className="footer-text">
                 This blog platform is designed to prioritize simplicity
                 and to allow users to interact with posts in a straightforward and functional way.
                 Users can view individual blog posts,
