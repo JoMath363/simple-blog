@@ -1,7 +1,14 @@
 import express from 'express';
-import { PORT, mongoDBURL } from './config.js'
 import mongoose from 'mongoose'; // Mongoose is a JS library to work with mongoDB
 import postsRoute from './routes/postsRoute.js'
+
+// Sets Enviroment variables
+import dotenv from 'dotenv';
+dotenv.config()
+
+const port = process.env.PORT
+const mongoDBURL = process.env.MONGO_DB_URL
+
 import cors from 'cors';
 
 const app = express();
@@ -31,8 +38,8 @@ mongoose
     .connect(mongoDBURL)
     .then(() => {
         console.log("App connect to database");
-        app.listen(PORT, () => {
-            console.log(`App is listening to port: ${PORT}`);
+        app.listen(port, () => {
+            console.log(`App is listening to port: ${port}`);
         })
     })
     .catch((error) => {
