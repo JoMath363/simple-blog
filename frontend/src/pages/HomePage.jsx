@@ -1,5 +1,4 @@
-import { useState } from 'react'
-import { blogPosts } from '../services/test.js'
+import { useState, useEffect } from 'react'
 
 // Assets
 import instaIcon from '../assets/instagram-icon.png'
@@ -13,19 +12,38 @@ import Header from "../components/Header.jsx";
 import Post from '../components/Post.jsx';
 import Footer from '../components/Footer.jsx'
 
+// Styles
+import '../styles/home-page.css'
+
 function HomePage() {
+    const [blogPosts, setBlogPosts] = useState([])
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch('http://localhost:5555/posts');
+                const result = await response.json()
+                setBlogPosts(result.data)
+            } catch (error) {
+                console.error('Error fetching data:', error);
+            }
+        }
+
+        fetchData()
+    }, [])
+
     const [page, setPage] = useState(0)
     const posts = blogPosts.slice(page, page + 10)
 
     function prevPage() {
-        if (page > 0){
+        if (page > 0) {
             setPage(p => p - 10)
             window.scrollTo(0, 0);
-        }  
+        }
     }
 
     function nextPage() {
-        if (page < blogPosts.length - 10){
+        if (page < blogPosts.length - 10) {
             setPage(p => p + 10)
             window.scrollTo(0, 0);
         }
@@ -45,7 +63,7 @@ function HomePage() {
             </section>
 
             <section id='posts_grid'>
-                {posts.map((p, i) => <Post key={i} {...p} />)}
+                {posts.map((p, i) => <Post key={i} {...p}/>)}
             </section>
 
             <section id='posts_nav'>
@@ -59,7 +77,7 @@ function HomePage() {
                 </button>
             </section>
         </main>
-        <Footer/>
+        <Footer />
     </>)
 }
 

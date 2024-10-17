@@ -9,7 +9,7 @@ function Header() {
                 <h2>Simple Blog</h2>
             </div>
 
-            <a href="/login" id='login_btn'>Login</a>
+            <a href="/login" id='login_btn'>Post</a>
         </header>
     )
 }

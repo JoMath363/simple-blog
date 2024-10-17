@@ -17,13 +17,7 @@ const app = express();
 app.use(express.json())
 
 // Middleware for handling CORS POLICY
-app.use(
-    cors({
-        origin: 'http://localhost:5555/',
-        methods: ['GET', 'POST', 'PUT', 'DELETE'],
-        allowedHeaders: ['Content-Type']
-    })
-)
+app.use(cors())
 
 // Base Router to verify server is on
 app.get('/', (req, res) => {
