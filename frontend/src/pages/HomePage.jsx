@@ -13,7 +13,7 @@ import Post from '../components/Post.jsx';
 import Footer from '../components/Footer.jsx'
 
 // Styles
-import '../styles/home-page.css'
+import '../styles/page-styles/home-page.css'
 
 function HomePage() {
     const [blogPosts, setBlogPosts] = useState([])

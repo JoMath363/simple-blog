@@ -10,7 +10,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 // Styles
-import '../styles/post-page.css'
+import '../styles/page-styles/post-page.css'
 
 function PostPage() {
     const [post, setPost] = useState({})
@@ -30,7 +30,6 @@ function PostPage() {
 
         fetchData()
     }, [])
-
 
     return (<>
         <Header />

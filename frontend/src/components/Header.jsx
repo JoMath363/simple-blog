@@ -1,5 +1,5 @@
 import blogIcon from '../assets/blog-icon.png'
-import '../styles/header.css'
+import '../styles/component-styles/header.css'
 
 function Header() {
     return(

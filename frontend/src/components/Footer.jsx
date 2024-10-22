@@ -2,7 +2,7 @@
 import githubIcon from '../assets/github-icon.png'
 
 // Styles
-import '../styles/footer.css'
+import '../styles/component-styles/footer.css'
 
 function Footer() {
     return (
