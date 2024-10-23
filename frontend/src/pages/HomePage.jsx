@@ -23,7 +23,7 @@ function HomePage() {
             try {
                 const response = await fetch('http://localhost:5555/posts');
                 const result = await response.json()
-                setBlogPosts(result.data)
+                setBlogPosts(result.data.reverse())
             } catch (error) {
                 console.error('Error fetching data:', error);
             }

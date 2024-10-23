@@ -2,17 +2,20 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 3rem;
 
     height: 80dvh;
 }
 
-#admin_container {
+.admin-form {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 
     width: 50vh;
+    height: 50vh;
     min-width: 250px;
-    padding: 3rem 2rem 4rem;
+    padding: 3rem 2rem;
 
     background: var(--primary);
     border: 2px solid var(--text);
@@ -35,6 +38,7 @@
         padding: 0.4rem 1rem;
         margin-bottom: 1.5rem;
 
+        background: var(--accent);
         border: 1px solid var(--text);
         border-radius: 5px;
 
@@ -45,6 +49,7 @@
         height: 10rem;
         padding: 0.5rem;
 
+        background: var(--accent);
         border: 1px solid var(--text);
         border-radius: 5px;
     }
@@ -65,3 +70,33 @@
         background: var(--bg-2);
     }
 }
+
+#post_list {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: 0;
+
+    height: 80%;
+
+    background: var(--accent);
+    border: 1px solid var(--text);
+    border-radius: 5px;
+
+    overflow-y: scroll;
+
+    & .pl-item {
+        padding: 0.5rem 2rem;
+        margin: 0;
+        
+        border: 1px solid var(--subtext);
+        border-radius: 0;
+
+        text-align: left;
+
+        &.active {
+            background: lightblue;
+        }
+    }
+}
+
