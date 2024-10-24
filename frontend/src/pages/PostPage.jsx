@@ -31,16 +31,59 @@ function PostPage() {
         fetchData()
     }, [])
 
+    const likePost = () => {
+        const postData = {
+            title: post.title,
+            content: post.content,
+            likes: String(post.likes + 1),
+            dislikes: String(post.dislikes)
+        };
+
+        ratePost(postData)
+    }
+
+    const dislikePost = () => {
+        const postData = {
+            title: post.title,
+            content: post.content,
+            likes: String(post.likes),
+            dislikes: String(post.dislikes + 1)
+        };
+
+        ratePost(postData)
+    }
+    
+
+    const ratePost = async (data) => {
+        try {
+            const response = await fetch(`http://localhost:5555/posts/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            });
+
+            if (response.ok) {
+                location.reload()
+            } else {
+                console.log(response);
+            }
+        } catch (error) {
+            alert('Error: ' + error.message);
+        }
+    }
+
     return (<>
         <Header />
         <main id="post_page">
             <h1 className="post-title">{post.title}</h1>
             <div className="post-status">
-                <button className="rate-btn">
+                <button className="rate-btn" onClick={() => likePost()}>
                     <img src={likeIcon} alt="Like" />
                     <span>{post.likes}</span>
                 </button>
-                <button className="rate-btn">
+                <button className="rate-btn" onClick={() => dislikePost()}>
                     <img src={dislikeIcon} alt="Deslike" />
                     <span>{post.dislikes}</span>
                 </button>
