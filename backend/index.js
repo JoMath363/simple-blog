@@ -7,7 +7,7 @@ import loginRoute from './routes/loginRoute.js'
 import dotenv from 'dotenv';
 dotenv.config()
 
-const port = process.env.PORT || 4000
+const port = process.env.PORT || 5555
 const mongoDBURL = process.env.MONGO_DB_URL
 
 import cors from 'cors';
